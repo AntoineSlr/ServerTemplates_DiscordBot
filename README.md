@@ -11,6 +11,7 @@ You will be given different server templates either via a help command or a dedi
 
 My idea in the future is, it would become an actual feature within Discord, because I can already tell that a Discord bot for this purpose wouldn't be the best option.
 That's why I've decided to focus mainly on a few examples for the bot, and then conceptualise how it could be implemented in Discord itself.
+
 I hope that you appreciate this project.
 
 Antoine#9999
