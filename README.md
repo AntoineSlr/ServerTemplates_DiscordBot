@@ -5,7 +5,7 @@ Creating a new Discord server is always a fun experience, but it can become pret
 
 The main purpose of ServerTemplates bot is to save time and effort when creating a new Discord Server.
 
-The way it works is : it should be invited in newly created Discord servers, and it will set up the main channels and their categories automatically.
+The way it works is : it should be invited in newly created Discord servers, and it will set up the main channels and roles automatically.
 
 You will be given different server templates either via a help command or a dedicated website for this bot.
 
