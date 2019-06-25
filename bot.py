@@ -7,7 +7,7 @@ from discord.ext import commands
 # from discord.utils import get
 # import requests
 
-token = "No_Token_For_You"
+token = ""
 
 Client = discord.Client()
 client = commands.Bot(command_prefix='!')
@@ -39,6 +39,7 @@ async def help(ctx):
 async def tmp(ctx, name=""):
     if name == "":
         await ctx.send("The template command needs an argument following `!tmp` for example `!tmp gaming`")
+
     elif name == "gaming":
         guild = ctx.guild
         await ctx.send(":video_game:")
@@ -46,14 +47,71 @@ async def tmp(ctx, name=""):
             guild.default_role: discord.PermissionOverwrite(read_messages=False),
             guild.me: discord.PermissionOverwrite(read_messages=True)
         }
-        cat_welcome = await guild.create_category('welcome')
-        rules = await guild.create_text_channel('Rules', overwrites=overwrites)
-        announcements = await guild.create_text_channel('Announcements', overwrites=overwrites)
-        welcome = await guild.create_text_channel('Welcome', overwrites=overwrites)
 
+        cat_admins = await guild.create_category('admin')
+
+        admin = await guild.create_text_channel('Admins', overwrites=overwrites)
+        await admin.edit(category=cat_admins)
+
+        bot_admin = await guild.create_text_channel('Bot-Commands-Admins', overwrites=overwrites)
+        await bot_admin.edit(category=cat_admins)
+
+        bot_admin = await guild.create_voice_channel('Admins', overwrites=overwrites)
+        await bot_admin.edit(category=cat_admins)
+
+        cat_welcome = await guild.create_category('welcome')
+
+        rules = await guild.create_text_channel('Rules', overwrites=overwrites)
         await rules.edit(category=cat_welcome)
+
+        announcements = await guild.create_text_channel('Announcements', overwrites=overwrites)
         await announcements.edit(category=cat_welcome)
+
+        welcome = await guild.create_text_channel('Welcome', overwrites=overwrites)
         await welcome.edit(category=cat_welcome)
+
+        general = await guild.create_text_channel('General', overwrites=overwrites)
+        await general.edit(category=cat_welcome)
+
+        cat_games = await guild.create_category('games')
+
+        game1 = await guild.create_text_channel('Game-1', overwrites=overwrites)
+        await game1.edit(category=cat_games)
+
+        game2 = await guild.create_text_channel('Game-2', overwrites=overwrites)
+        await game2.edit(category=cat_games)
+
+        game3 = await guild.create_text_channel('Game-3', overwrites=overwrites)
+        await game3.edit(category=cat_games)
+
+        game4 = await guild.create_text_channel('Game-4', overwrites=overwrites)
+        await game4.edit(category=cat_games)
+
+        voice1 = await guild.create_voice_channel('Voice-1', overwrites=overwrites)
+        await voice1.edit(category=cat_games)
+
+        voice2 = await guild.create_voice_channel('Voice-2', overwrites=overwrites)
+        await voice2.edit(category=cat_games)
+
+        voice3 = await guild.create_voice_channel('Voice-3', overwrites=overwrites)
+        await voice3.edit(category=cat_games)
+
+        voice4 = await guild.create_voice_channel('Voice-4', overwrites=overwrites)
+        await voice4.edit(category=cat_games)
+
+        voice5 = await guild.create_voice_channel('Voice-5', overwrites=overwrites)
+        await voice5.edit(category=cat_games)
+
+        voice6 = await guild.create_voice_channel('Voice-6', overwrites=overwrites)
+        await voice6.edit(category=cat_games)
+
+        cat_other = await guild.create_category('other')
+
+        off = await guild.create_text_channel('Off-Topic', overwrites=overwrites)
+        await off.edit(category=cat_other)
+
+        bot = await guild.create_text_channel('Bot-Commands', overwrites=overwrites)
+        await bot.edit(category=cat_other)
 
     else:
         await ctx.send("The template you're looking for doesn't exist, you can find available templates here : "
