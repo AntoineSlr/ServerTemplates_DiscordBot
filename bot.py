@@ -31,7 +31,8 @@ async def on_ready():
 async def help(ctx):
     embed = discord.Embed(colour=discord.Colour.orange())
     embed.set_author(name='ServerTemplate Help')
-    embed.add_field(name="test", value="owo", inline=False)
+    embed.add_field(name="!tmp gaming", value="A template for g@m3rs", inline=False)
+    embed.add_field(name="!tmp social", value="A template for friends", inline=False)
     await ctx.send(embed=embed)
 
 
@@ -87,24 +88,6 @@ async def tmp(ctx, name=""):
         game4 = await guild.create_text_channel('Game-4', overwrites=overwrites)
         await game4.edit(category=cat_games)
 
-        voice1 = await guild.create_voice_channel('Voice-1', overwrites=overwrites)
-        await voice1.edit(category=cat_games)
-
-        voice2 = await guild.create_voice_channel('Voice-2', overwrites=overwrites)
-        await voice2.edit(category=cat_games)
-
-        voice3 = await guild.create_voice_channel('Voice-3', overwrites=overwrites)
-        await voice3.edit(category=cat_games)
-
-        voice4 = await guild.create_voice_channel('Voice-4', overwrites=overwrites)
-        await voice4.edit(category=cat_games)
-
-        voice5 = await guild.create_voice_channel('Voice-5', overwrites=overwrites)
-        await voice5.edit(category=cat_games)
-
-        voice6 = await guild.create_voice_channel('Voice-6', overwrites=overwrites)
-        await voice6.edit(category=cat_games)
-
         cat_other = await guild.create_category('other')
 
         off = await guild.create_text_channel('Off-Topic', overwrites=overwrites)
@@ -112,6 +95,26 @@ async def tmp(ctx, name=""):
 
         bot = await guild.create_text_channel('Bot-Commands', overwrites=overwrites)
         await bot.edit(category=cat_other)
+
+        cat_voice = await guild.create_category('voice')
+
+        voice1 = await guild.create_voice_channel('Voice-1', overwrites=overwrites)
+        await voice1.edit(category=cat_voice)
+
+        voice2 = await guild.create_voice_channel('Voice-2', overwrites=overwrites)
+        await voice2.edit(category=cat_voice)
+
+        voice3 = await guild.create_voice_channel('Voice-3', overwrites=overwrites)
+        await voice3.edit(category=cat_voice)
+
+        voice4 = await guild.create_voice_channel('Voice-4', overwrites=overwrites)
+        await voice4.edit(category=cat_voice)
+
+        voice5 = await guild.create_voice_channel('Voice-5', overwrites=overwrites)
+        await voice5.edit(category=cat_voice)
+
+        voice6 = await guild.create_voice_channel('Voice-6', overwrites=overwrites)
+        await voice6.edit(category=cat_voice)
 
     else:
         await ctx.send("The template you're looking for doesn't exist, you can find available templates here : "
