@@ -44,9 +44,20 @@ async def tmp(ctx, name=""):
     elif name == "gaming":
         guild = ctx.guild
         await ctx.send(":video_game:")
-        overwrites = {
+
+        role_admin = await guild.create_role(name="Admin", permissions=discord.Permissions(permissions=8), hoist=True)
+        role_modo = await guild.create_role(name="Moderator", permissions=discord.Permissions(permissions=1341648199), hoist=True)
+
+        overwrites_admin = {
             guild.default_role: discord.PermissionOverwrite(read_messages=False),
-            guild.me: discord.PermissionOverwrite(read_messages=True)
+            # guild.me: discord.PermissionOverwrite(read_messages=True)
+            role_modo: discord.PermissionOverwrite(read_messages=True)
+        }
+
+        overwrites2 = {
+            guild.default_role: discord.PermissionOverwrite(read_messages=True),
+            # guild.me: discord.PermissionOverwrite(read_messages=True)
+            role_modo: discord.PermissionOverwrite(read_messages=False)
         }
 
         cat_admins = await guild.create_category('admin')
@@ -57,11 +68,14 @@ async def tmp(ctx, name=""):
         bot_admin = await guild.create_text_channel('Bot-Commands-Admins', overwrites=overwrites)
         await bot_admin.edit(category=cat_admins)
 
+        mods = await guild.create_text_channel('Mods', overwrites=overwrites)
+        await mods.edit(category=cat_admins)
+
         bot_admin = await guild.create_voice_channel('Admins', overwrites=overwrites)
         await bot_admin.edit(category=cat_admins)
 
         cat_welcome = await guild.create_category('welcome')
-
+        """
         rules = await guild.create_text_channel('Rules', overwrites=overwrites)
         await rules.edit(category=cat_welcome)
 
@@ -70,10 +84,10 @@ async def tmp(ctx, name=""):
 
         welcome = await guild.create_text_channel('Welcome', overwrites=overwrites)
         await welcome.edit(category=cat_welcome)
-
-        general = await guild.create_text_channel('General', overwrites=overwrites)
+        """
+        general = await guild.create_text_channel('General', overwrites=overwrites2)
         await general.edit(category=cat_welcome)
-
+        """
         cat_games = await guild.create_category('games')
 
         game1 = await guild.create_text_channel('Game-1', overwrites=overwrites)
@@ -114,7 +128,7 @@ async def tmp(ctx, name=""):
         await voice5.edit(category=cat_voice)
 
         voice6 = await guild.create_voice_channel('Voice-6', overwrites=overwrites)
-        await voice6.edit(category=cat_voice)
+        await voice6.edit(category=cat_voice)"""
 
     else:
         await ctx.send("The template you're looking for doesn't exist, you can find available templates here : "
