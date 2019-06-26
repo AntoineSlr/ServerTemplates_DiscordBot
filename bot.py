@@ -4,7 +4,7 @@ from discord.ext import commands
 token = ""
 
 Client = discord.Client()
-client = commands.Bot(command_prefix='!')
+client = commands.Bot(command_prefix='+')
 client.remove_command('help')
 
 
@@ -12,14 +12,15 @@ client.remove_command('help')
 async def on_ready():
     ready = "Ready !" + "\nBot name : " + str(client.user.name) + "\nBot ID : " + str(client.user.id)
     print(ready)
+    await client.change_presence(status=discord.Status.online, activity=discord.Game('with Wumpus'))
 
 
 @client.command(pass_context=True)
 async def help(ctx):
     embed = discord.Embed(colour=discord.Colour.orange())
     embed.set_author(name='ServerTemplate Help')
-    embed.add_field(name="!tmp gaming", value="A template for g@m3rs", inline=False)
-    embed.add_field(name="!tmp social", value="A template for friends", inline=False)
+    embed.add_field(name="+tmp gaming", value="A template for g@m3rs", inline=False)
+    embed.add_field(name="+tmp social", value="A template for friends", inline=False)
     await ctx.send(embed=embed)
 
 
@@ -47,7 +48,7 @@ async def tmp(ctx, name=""):
                                                 permissions=discord.Permissions(permissions=1341648327), hoist=True)
             role_member = await guild.create_role(name="Member", color=discord.Colour.from_rgb(51, 153, 255),
                                                   permissions=discord.Permissions(permissions=104320064), hoist=True)
-
+            
             overwrites_admin = {
                 guild.default_role: discord.PermissionOverwrite(read_messages=False),
                 role_member: discord.PermissionOverwrite(read_messages=False),
