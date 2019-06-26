@@ -1,4 +1,4 @@
-# ServerTemplates_DiscordBot
+# ServerTemplatesBot - Discord
 **A Discord Bot for #HackWeek that will allow you to create new servers way faster**
 
 Creating a new Discord server is always a fun experience, but it can become pretty time consuming.
