@@ -11,7 +11,7 @@ You will be given different server templates via a help command (or a dedicated 
 
 My idea in the future is, it would become an actual feature within Discord, because I can already tell that even though a Discord bot for this purpose works fine, it might not be the best option.
 
-That's why I've decided to focus mainly on a couple examples for the bot, and then conceptualise how it could be implemented in Discord itself.
+That's why I've decided to focus mainly on a couple examples for the bot, and then conceptualise how it could be implemented in Discord itself (see 'select_a_template_screen2.png')
 
 You can invite the bot here : https://discordapp.com/api/oauth2/authorize?client_id=592800638841126912&permissions=8&scope=bot
 
