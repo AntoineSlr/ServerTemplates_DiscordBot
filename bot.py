@@ -41,11 +41,11 @@ async def tmp(ctx, name=""):
             guild = ctx.guild
             await ctx.send(":video_game:")
 
-            role_admin = await guild.create_role(name="Admin",
+            role_admin = await guild.create_role(name="Admin", color=discord.Colour.from_rgb(255, 153, 0),
                                                  permissions=discord.Permissions(permissions=8), hoist=True)
-            role_modo = await guild.create_role(name="Moderator",
+            role_modo = await guild.create_role(name="Moderator", color=discord.Colour.from_rgb(255, 0, 0),
                                                 permissions=discord.Permissions(permissions=1341648327), hoist=True)
-            role_member = await guild.create_role(name="Member",
+            role_member = await guild.create_role(name="Member", color=discord.Colour.from_rgb(51, 153, 255),
                                                   permissions=discord.Permissions(permissions=104320064), hoist=True)
 
             overwrites_admin = {
@@ -155,11 +155,11 @@ async def tmp(ctx, name=""):
             guild = ctx.guild
             await ctx.send(":speech_balloon:")
 
-            role_admin = await guild.create_role(name="Admin",
+            role_admin = await guild.create_role(name="Admin", color=discord.Colour.from_rgb(255, 153, 0),
                                                  permissions=discord.Permissions(permissions=8), hoist=True)
-            role_modo = await guild.create_role(name="Moderator",
+            role_modo = await guild.create_role(name="Moderator", color=discord.Colour.from_rgb(255, 0, 0),
                                                 permissions=discord.Permissions(permissions=1341648327), hoist=True)
-            role_member = await guild.create_role(name="Member",
+            role_member = await guild.create_role(name="Member", color=discord.Colour.from_rgb(51, 153, 255),
                                                   permissions=discord.Permissions(permissions=104320064), hoist=True)
 
             overwrites_admin = {
