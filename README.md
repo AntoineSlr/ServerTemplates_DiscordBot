@@ -13,6 +13,8 @@ My idea in the future is, it would become an actual feature within Discord, beca
 
 That's why I've decided to focus mainly on a couple examples for the bot, and then conceptualise how it could be implemented in Discord itself.
 
+You can invite the bot here : https://discordapp.com/api/oauth2/authorize?client_id=592800638841126912&permissions=8&scope=bot
+
 I hope that you appreciate this project.
 
 Antoine#9999
